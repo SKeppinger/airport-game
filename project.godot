@@ -14,6 +14,12 @@ config/name="AirportGame"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=864
+window/size/resizable=false
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
