@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b77cfewefdxi4"]
+
+[ext_resource type="Script" uid="uid://cely6wvekgqy7" path="res://TerminalRun/hud.gd" id="1_cecjp"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_cecjp")
+
+[node name="Message" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Press START to START"
+
+[node name="MessageTimer" type="Timer" parent="."]

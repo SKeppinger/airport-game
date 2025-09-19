@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bag1v2od6eanj"
-path="res://.godot/imported/spr_bagcount_number.png-ebcc8c69cfa5c781f269e081e83a5c77.ctex"
+uid="uid://bxpba78ee1od3"
+path="res://.godot/imported/playerplaceholder.png-8c2ca7663f728875442f6b5ae1fca252.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/bagris/spr_bagcount_number.png"
-dest_files=["res://.godot/imported/spr_bagcount_number.png-ebcc8c69cfa5c781f269e081e83a5c77.ctex"]
+source_file="res://assets/sprites/hey_im_walkin_here/playerplaceholder.png"
+dest_files=["res://.godot/imported/playerplaceholder.png-8c2ca7663f728875442f6b5ae1fca252.ctex"]
 
 [params]
 

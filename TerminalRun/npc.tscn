@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://cuuq11c0f3xl"]
+
+[ext_resource type="Texture2D" uid="uid://c7i5dvcqmk4jl" path="res://assets/sprites/hey_im_walkin_here/npc_characters/character1/npc1idle.png" id="1_1n0xs"]
+[ext_resource type="Script" uid="uid://qywt5eikbomw" path="res://TerminalRun/npc.gd" id="1_eggj6"]
+[ext_resource type="Texture2D" uid="uid://c2tab5mthofnb" path="res://assets/sprites/hey_im_walkin_here/npc_characters/character1/walking_anim/npc1walking_1.png" id="2_eggj6"]
+[ext_resource type="Texture2D" uid="uid://bjshclih8ab2e" path="res://assets/sprites/hey_im_walkin_here/npc_characters/character1/walking_anim/npc1walking_2.png" id="3_ubpxe"]
+[ext_resource type="Texture2D" uid="uid://davmx1mqdn3hd" path="res://assets/sprites/hey_im_walkin_here/npc_characters/character1/walking_anim/npc1walking_3.png" id="4_5nmlm"]
+[ext_resource type="Texture2D" uid="uid://cyi5s267wl1v7" path="res://assets/sprites/hey_im_walkin_here/npc_characters/character1/walking_anim/npc1walking_4.png" id="5_ovu23"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1n0xs"]
+size = Vector2(16, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eggj6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1n0xs")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eggj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ubpxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5nmlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ovu23")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="npc" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_eggj6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1n0xs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_eggj6")
+animation = &"idle"
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4s8rjnuwja2n"]
+
+[ext_resource type="Texture2D" uid="uid://kpnotajfrssp" path="res://assets/sprites/hey_im_walkin_here/bg/terminalbg.png" id="1_mmph6"]
+[ext_resource type="PackedScene" uid="uid://bcg10h2c4h6yj" path="res://TerminalRun/player.tscn" id="2_mmph6"]
+
+[sub_resource type="GDScript" id="GDScript_r6bnk"]
+script/source = "extends TextureRect
+"
+
+[node name="Main" type="Node2D"]
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundLayer"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_mmph6")
+stretch_mode = 4
+script = SubResource("GDScript_r6bnk")
+
+[node name="Player" parent="." instance=ExtResource("2_mmph6")]
+position = Vector2(83, 85)

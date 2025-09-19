@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcg10h2c4h6yj"]
+
+[ext_resource type="Script" uid="uid://lcrw1a5kqlh" path="res://TerminalRun/player.gd" id="1_ai0iq"]
+[ext_resource type="Texture2D" uid="uid://bxpba78ee1od3" path="res://assets/sprites/hey_im_walkin_here/playerplaceholder.png" id="2_mu2cf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sh265"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mu2cf")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3h8f8"]
+size = Vector2(16, 19)
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_ai0iq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_sh265")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3h8f8")
