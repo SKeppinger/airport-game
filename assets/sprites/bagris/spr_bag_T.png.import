@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhkrt35dwpmem"
-path="res://.godot/imported/spr_bag_S.png-7a765de1547bb8b1ddf0acaa6e1c963a.ctex"
+uid="uid://b78jyuavubet7"
+path="res://.godot/imported/spr_bag_T.png-36e8eed250225e7409fafdcc87bdb16e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/bagris/spr_bag_S.png"
-dest_files=["res://.godot/imported/spr_bag_S.png-7a765de1547bb8b1ddf0acaa6e1c963a.ctex"]
+source_file="res://assets/sprites/bagris/spr_bag_T.png"
+dest_files=["res://.godot/imported/spr_bag_T.png-36e8eed250225e7409fafdcc87bdb16e.ctex"]
 
 [params]
 
