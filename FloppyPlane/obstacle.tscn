@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnxthq7e1hvuy"]
+
+[ext_resource type="Script" uid="uid://6ty6kmtl7r16" path="res://FloppyPlane/obstacle.gd" id="1_vil82"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_f8q6p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vil82"]
+size = Vector2(32, 32)
+
+[node name="obstacle" type="Area2D"]
+collision_mask = 0
+script = ExtResource("1_vil82")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(32, 32)
+texture = SubResource("PlaceholderTexture2D_f8q6p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vil82")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
