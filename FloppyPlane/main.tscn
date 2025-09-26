@@ -1,3 +1,50 @@
-[gd_scene format=3 uid="uid://coosp243en1dt"]
+[gd_scene load_steps=6 format=3 uid="uid://coosp243en1dt"]
+
+[ext_resource type="Script" uid="uid://whd18b575k7t" path="res://FloppyPlane/main.gd" id="1_5t86s"]
+[ext_resource type="PackedScene" uid="uid://13abdcdkbfxy" path="res://FloppyPlane/player.tscn" id="1_k66k8"]
+[ext_resource type="PackedScene" uid="uid://dnxthq7e1hvuy" path="res://FloppyPlane/obstacle.tscn" id="2_ow2fa"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5t86s"]
+
+[sub_resource type="Curve2D" id="Curve2D_cb0kw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 160, 0, 0, 0, 0, 0, 160, 144, 0, 0, 0, 0, 160, 144, 0, 0, 0, 0, 160, 0)
+}
+point_count = 4
 
 [node name="Main" type="Node"]
+script = ExtResource("1_5t86s")
+obstacle_scene = ExtResource("2_ow2fa")
+
+[node name="Ceiling" type="StaticBody2D" parent="."]
+
+[node name="CeilingHitPlane" type="CollisionShape2D" parent="Ceiling"]
+position = Vector2(80, 0)
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_5t86s")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="GroundHitPlane" type="CollisionShape2D" parent="Ground"]
+position = Vector2(80, 144)
+shape = SubResource("WorldBoundaryShape2D_5t86s")
+
+[node name="player" parent="." instance=ExtResource("1_k66k8")]
+
+[node name="SpawnPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_cb0kw")
+
+[node name="SpawnLocation" type="PathFollow2D" parent="SpawnPath"]
+position = Vector2(160, 0)
+rotation = 1.5707964
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(80, 72)
+
+[node name="WinTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
+[connection signal="hit" from="player" to="." method="_on_player_hit"]
+[connection signal="timeout" from="WinTimer" to="." method="_on_win_timer_timeout"]

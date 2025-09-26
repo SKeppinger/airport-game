@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://13abdcdkbfxy"]
+[gd_scene load_steps=5 format=3 uid="uid://13abdcdkbfxy"]
 
 [ext_resource type="Script" uid="uid://85fdywnf3pvl" path="res://FloppyPlane/player.gd" id="1_s0eed"]
 
@@ -7,9 +7,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dyf6n"]
 size = Vector2(1, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0eed"]
+size = Vector2(16, 8)
+
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_s0eed")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(16, 8)
@@ -18,3 +20,10 @@ texture = SubResource("PlaceholderTexture2D_dyf6n")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(16, 8)
 shape = SubResource("RectangleShape2D_dyf6n")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_s0eed")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

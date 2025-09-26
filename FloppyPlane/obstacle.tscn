@@ -7,8 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vil82"]
 size = Vector2(32, 32)
 
-[node name="obstacle" type="Area2D"]
-collision_mask = 0
+[node name="obstacle" type="Area2D" groups=["obstacle"]]
 script = ExtResource("1_vil82")
 metadata/_edit_group_ = true
 
