@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhkrt35dwpmem"
-path="res://.godot/imported/spr_bag_S.png-7a765de1547bb8b1ddf0acaa6e1c963a.ctex"
+uid="uid://c7oi08nwhqk50"
+path="res://.godot/imported/npc3walking_3.png-e9dbe18aac7f3ff971908a7dc931ea37.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/bagris/spr_bag_S.png"
-dest_files=["res://.godot/imported/spr_bag_S.png-7a765de1547bb8b1ddf0acaa6e1c963a.ctex"]
+source_file="res://assets/sprites/hey_im_walkin_here/npc_characters/character3/walking_anim/npc3walking_3.png"
+dest_files=["res://.godot/imported/npc3walking_3.png-e9dbe18aac7f3ff971908a7dc931ea37.ctex"]
 
 [params]
 
